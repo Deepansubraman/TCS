@@ -1,0 +1,19 @@
+class Solution {
+    long ExtractNumber(String sentence) {
+        // code here
+           long max = -1;
+        String srr[] = sentence.split(" ");
+        for(int i=0;i<srr.length;i++){
+            if(srr[i].matches("\\d+")){
+                if(srr[i].contains("9")){
+                     continue;
+                } else{
+                    long a = Long.parseLong(srr[i]);
+                    max = Math.max(max,a);
+                }
+            }
+        }
+         return max;
+    }
+    
+}
