@@ -1,0 +1,26 @@
+class Solution {
+  public:
+    int minJumps(vector<int>& arr) {
+     if(arr[0]==0)return -1;
+        if(arr.size()==1)return 1;
+        int jumps=0;
+        int curr=0;
+        int far=0;
+        
+        for(int i=0;i<arr.size()-1;i++){
+            far=max(arr[i]+i,far);
+            if(curr==i){
+                jumps++;
+                curr=far;
+                if(curr>=arr.size()-1){
+                    break;
+                }
+            }
+        }
+        if(curr>=arr.size()-1)
+        return jumps;
+        else{
+            return -1;
+        }
+    }
+};
