@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    int missingNumber(vector<int>& arr) {
+        // code here
+        int b=0;
+        for(int i=0;i<arr.size();i++)
+        {
+            b=b^arr[i];
+        }
+        int c=0;
+        for(int i=0;i<=arr.size()+1;i++)
+        {
+           c=c^i;
+        }
+        return b^c;
+    }
+};
